@@ -1,6 +1,6 @@
-priority_harm: REPLACE
-primary_metric: REPLACE
-tolerance: REPLACE
-evidence: REPLACE
-limitation: REPLACE
-recommendation: REPLACE
+priority_harm: "Exclusión de personas del grupo G1: el modelo logra recall 0.653 en G1 frente a 0.791 en G2, de modo que casos de G1 con riesgo real quedan al final de la cola y no llegan a revisión humana. El daño se concentra en G1 | 45-59 (recall 0.588, exactitud 0.600)."
+primary_metric: "recall (TPR) por grupo protegido, con la brecha de falsos positivos (FPR) como métrica secundaria de vigilancia; ambas medidas sobre el split temporal."
+tolerance: "recall global >= 0.68 y recall de cada grupo >= 0.68; brecha de recall <= 0.16 y brecha de FPR <= 0.16 entre G1 y G2, según configs/governance.yml. Celdas interseccionales con n < 15 se excluyen por falta de soporte."
+evidence: "logistic: exactitud 0.719, recall 0.717, precisión 0.776, FPR 0.279; brecha de recall 0.138 y de FPR 0.125 (dentro del gate), pero recall de G1 0.653 < 0.68. tree: exactitud 0.706, recall 0.717, FPR 0.309; brecha de recall 0.181 y de FPR 0.168 (ambas fuera del gate). Recursos: logistic 3.56 KB y 0.079 s de entrenamiento; tree 7.87 KB y 0.116 s. Bootstrap (2000 réplicas, reports/lab12/uncertainty.json): IC95 de la brecha de recall [-0.041, 0.321] en logistic y [-0.006, 0.352] en tree; probabilidad de superar el gate 39% y 58% respectivamente. Evidencia en reports/lab12/logistic/ y reports/lab12/tree/."
+limitation: "El test temporal tiene 160 casos (G1 101, G2 59, con solo 16 negativos en G2) y una sola partición, por lo que los intervalos de confianza de las brechas cruzan cero y 'pasar el gate' no demuestra equidad. El recall de G1 en logistic tiene IC95 [0.513, 0.771] y 65% de probabilidad de estar bajo 0.68. Las celdas interseccionales G2 | 45-59 (n=8), G2 | 18-29 (n=11) y G2 | 30-44 (n=14) no tienen soporte suficiente. Los datos son sintéticos: los resultados no se generalizan a población real ni sustituyen una validación externa."
+recommendation: "Usar logistic como modelo candidato en piloto con revisión humana obligatoria y NO desplegar el árbol. No pasar a producción todavía: primero cerrar la brecha de recall de G1 hasta >= 0.68 (priorizando G1 | 45-59) y re-auditar con una ventana temporal adicional. Si no se corrige en la próxima iteración, aplicar la condición de retiro de LAB11 (recall < 0.68) y volver a la alternativa no predictiva."
