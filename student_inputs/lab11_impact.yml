@@ -1,9 +1,9 @@
-purpose: REPLACE
-assisted_decision: REPLACE
-users: REPLACE
-affected_population: REPLACE
-owner: REPLACE
-non_predictive_alternative: REPLACE
-out_of_scope_use: REPLACE
-withdrawal_condition: REPLACE
-appeal_mechanism: REPLACE
+purpose: "Priorizar casos sintéticos de riesgo territorial para revisión humana, de modo que los analistas ordenen su carga de trabajo por probabilidad estimada de incidente. El sistema no decide intervenciones sobre personas ni territorios: solo ordena una cola de revisión."
+assisted_decision: "Ordenar la cola de casos que un analista humano revisará primero. El modelo produce un puntaje de prioridad; el analista decide si abre o no una revisión territorial y deja constancia de su decisión."
+users: "Analistas de la unidad de análisis territorial y su supervisión inmediata; el equipo de datos que opera y mantiene el modelo."
+affected_population: "Personas y comunidades representadas en los casos sintéticos del dataset; en un despliegue real, hogares de los distritos Norte, Sur, Este y Oeste, incluidos los grupos protegidos G1 y G2 y las personas de 60 años o más."
+owner: "Dirección de Análisis Territorial (rol institucional), responsable del propósito, de la base legal de los datos y de la decisión de retirar el sistema."
+non_predictive_alternative: "Revisión por muestreo aleatorio estratificado por distrito, con una lista de verificación de infraestructura y exposición y una regla simple que prioriza los casos con más incidentes previos. Exige más esfuerzo humano por caso, pero no puntúa personas ni requiere datos sensibles."
+out_of_scope_use: "Prohibido usar el puntaje para decidir intervenciones, elegibilidad de beneficios, declaratorias de emergencia o asignación vinculante de recursos; prohibido para vigilancia o perfilamiento de poblaciones reales; prohibido como evidencia única de una decisión."
+withdrawal_condition: "Se retira el sistema si: el recall cae por debajo de 0.68, la brecha de recall o de falsos positivos entre G1 y G2 supera 0.16, no existe capacidad humana para revisar la cola priorizada, se documenta un incidente de daño atribuible al puntaje, o se pierde el propietario institucional o la base legal de los datos."
+appeal_mechanism: "Toda persona o comunidad afectada puede solicitar revisión humana de su caso mediante el formulario de la unidad, con respuesta en un plazo de 10 días hábiles. La revisión la realiza un analista distinto del que priorizó y queda registrada en el expediente del caso."
