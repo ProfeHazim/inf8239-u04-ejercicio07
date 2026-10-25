@@ -338,7 +338,7 @@ uv run pytest -q
 
 1. **Datos sintéticos.** No representan personas, territorios ni estadísticas reales; los hallazgos son didácticos.
 2. **Test pequeño y una sola partición.** 160 casos, G2 con solo 16 negativos. Los intervalos de confianza son amplios por construcción.
-3. **Latencia no medida.** El gate de 500 ms está sin evidencia; solo se midió tiempo de entrenamiento.
+3. **Latencia medida solo en desarrollo.** LAB13 registra **0.040 ms por caso** frente al gate de 500 ms (margen de ~12,500×), pero la medición se hizo en el entorno de desarrollo, no en el institucional. El margen es amplio; la medición en producción sigue pendiente.
 4. **Sin validación externa.** No hay datos de otro periodo ni de otra fuente que confirme la estabilidad de las brechas.
 5. **R02 y R07 no medidos en operación.** Los controles están diseñados, no ejecutados; el piloto es precisamente el mecanismo para probarlos.
 6. **No se aplicaron técnicas de mitigación** (reweighting, equalized odds, calibración por grupo). El expediente audita y decide; la mitigación corresponde a la siguiente iteración.
