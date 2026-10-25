@@ -342,7 +342,3 @@ uv run pytest -q
 4. **Sin validación externa.** No hay datos de otro periodo ni de otra fuente que confirme la estabilidad de las brechas.
 5. **R02 y R07 no medidos en operación.** Los controles están diseñados, no ejecutados; el piloto es precisamente el mecanismo para probarlos.
 6. **No se aplicaron técnicas de mitigación** (reweighting, equalized odds, calibración por grupo). El expediente audita y decide; la mitigación corresponde a la siguiente iteración.
-
----
-
-**Firma:** Dirección de Análisis Territorial · **Fecha:** 2026-10-25 · **Estado:** REVISAR — piloto con revisión humana

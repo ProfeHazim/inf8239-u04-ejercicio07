@@ -2,4 +2,8 @@ activity,R,A,C,I
 Data quality,Data Engineer,Product Owner,Data Scientist,Affected representatives
 Model validation,Data Scientist,Product Owner,Data Engineer,Affected representatives
 Deployment,ML Engineer,Product Owner,Data Scientist,Users
-Incident response,ML Engineer,Institutional Owner,Legal and Data Scientist,Affected representatives
+Incident response,ML Engineer,Institutional Owner,Legal; Data Scientist,Affected representatives
+Privacy and DPIA,Data Protection Officer,Institutional Owner,Legal; Data Scientist,Affected representatives
+Monitoring and drift alerts,Data Scientist,Institutional Owner,ML Engineer,Operator
+Appeal and human review,Operator,Institutional Owner,Legal,Affected representatives
+Decommissioning,ML Engineer,Institutional Owner,Data Scientist; Legal,Affected representatives; Users
